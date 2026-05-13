@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satvic Skin | Project Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base', 
+            themeVariables: {
+                primaryColor: '#F3F6F1',
+                primaryTextColor: '#2B3A2C',
+                primaryBorderColor: '#8DBB9F',
+                lineColor: '#59705A',
+                secondaryColor: '#B5EAD7',
+                tertiaryColor: '#FAFAFA'
+            }
+        });
+    </script>
+    <style>
+        :root {
+            --clr-bg-main: #FAFAFA;
+            --clr-bg-alt: #F3F6F1;
+            --clr-accent: #B5EAD7;
+            --clr-accent-dark: #8DBB9F;
+            --clr-text-main: #2B3A2C;
+            --clr-text-light: #59705A;
+            --clr-white: #FFFFFF;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--clr-text-main);
+            background-color: var(--clr-bg-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--clr-bg-alt);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--clr-accent);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--clr-text-main);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--clr-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .card {
+            background-color: var(--clr-white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(43, 58, 44, 0.05);
+            border-top: 4px solid var(--clr-accent-dark);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--clr-accent);
+            color: var(--clr-text-main);
+            font-weight: 600;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            flex: 1;
+            min-width: 120px;
+            height: 100px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .mermaid {
+            background-color: var(--clr-bg-alt);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        code {
+            background-color: var(--clr-bg-alt);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--clr-text-light);
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--clr-bg-alt);
+            color: var(--clr-text-light);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Satvic Skin</h1>
+    <p>Comprehensive Project Documentation & Step-by-Step Implementation Guide</p>
+</header>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p><strong>Satvic Skin</strong> is a high-performance, responsive, and SEO-optimized one-page e-commerce website designed for a natural skincare brand. The project emphasizes a clean, premium aesthetic using a pastel green and off-white color palette, ensuring a calming user experience aligned with the brand's organic philosophy.</p>
+        <p><strong>Tech Stack:</strong> HTML5, CSS3 (Vanilla), JavaScript (Vanilla).</p>
+        
+        <h3>Architecture & File Structure</h3>
+        <div class="mermaid">
+        graph TD
+            A[SatvicSkin Workspace] --> B(index.html)
+            A --> C(style.css)
+            A --> D(script.js)
+            A --> E[assets/]
+            E --> F[images/]
+            F --> G[hero_skincare.png]
+            F --> H[radiance_serum.png]
+            F --> I[night_cream.png]
+            F --> J[gentle_cleanser.png]
+        </div>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">1</span> Design System & Philosophy</h2>
+        <p>The first step involved defining the brand's visual identity. We selected typography that feels modern yet approachable, and a color palette that reflects nature, purity, and calmness.</p>
+        
+        <h3>Color Palette</h3>
+        <div class="color-palette">
+            <div class="color-box" style="background-color: #FAFAFA; color: #2B3A2C; border: 1px solid #e0e0e0;">--clr-bg-main<br>#FAFAFA</div>
+            <div class="color-box" style="background-color: #F3F6F1; color: #2B3A2C;">--clr-bg-alt<br>#F3F6F1</div>
+            <div class="color-box" style="background-color: #B5EAD7; color: #2B3A2C;">--clr-accent<br>#B5EAD7</div>
+            <div class="color-box" style="background-color: #8DBB9F; color: #FFFFFF;">--clr-accent-dark<br>#8DBB9F</div>
+            <div class="color-box" style="background-color: #2B3A2C; color: #FFFFFF;">--clr-text-main<br>#2B3A2C</div>
+            <div class="color-box" style="background-color: #59705A; color: #FFFFFF;">--clr-text-light<br>#59705A</div>
+        </div>
+
+        <h3>Typography</h3>
+        <ul>
+            <li><strong>Headings:</strong> <code>Outfit</code> - Used for impactful, geometric, and modern titles.</li>
+            <li><strong>Body Text:</strong> <code>Inter</code> - Highly legible sans-serif for descriptions and general content.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">2</span> Semantic HTML & SEO</h2>
+        <p>We structured the document using semantic HTML5 tags to ensure accessibility and excellent search engine optimization (SEO).</p>
+        
+        <div class="mermaid">
+        flowchart LR
+            Body[Body] --> Header[header]
+            Body --> Main[main]
+            Body --> Footer[footer]
+            
+            Main --> Hero[section id='home']
+            Main --> Features[section class='features']
+            Main --> About[section id='about']
+            Main --> Shop[section id='shop']
+            Main --> Newsletter[section id='contact']
+        </div>
+
+        <p><strong>SEO Best Practices Implemented:</strong></p>
+        <ul>
+            <li>Descriptive meta tags for viewport and description.</li>
+            <li><strong>JSON-LD Schema Markup:</strong> Added <code>HealthAndBeautyBusiness</code> structured data to help search engines understand the website's context.</li>
+            <li>Use of <code>alt</code> attributes on all images for screen readers and image search.</li>
+            <li>Logical heading hierarchy (H1 for main title, H2 for sections, H3 for sub-sections).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">3</span> CSS Styling & Layouts</h2>
+        <p>The styling is built purely with Vanilla CSS, leveraging modern features like CSS Variables (Custom Properties), Flexbox, and CSS Grid for a robust responsive design.</p>
+        
+        <h3>Layout Strategy</h3>
+        <p>We combined Grid and Flexbox where each shines best:</p>
+        <div class="mermaid">
+        pie
+            title "CSS Layout Methods Used"
+            "CSS Grid (Product Cards, Footer, Hero)" : 60
+            "Flexbox (Navigation, Centering, Badges)" : 40
+        </div>
+
+        <ul>
+            <li><strong>CSS Variables:</strong> Stored at the <code>:root</code> level for easy theming and consistency.</li>
+            <li><strong>Responsive Grid:</strong> The product showcase uses <code>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</code> to automatically wrap and resize product cards based on screen width without media queries.</li>
+            <li><strong>Glassmorphism:</strong> The sticky navigation header uses <code>backdrop-filter: blur(10px)</code> for a modern, premium feel as it scrolls over content.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">4</span> JavaScript Interactivity</h2>
+        <p>Vanilla JavaScript was used to add life to the website, focusing on performance without heavy libraries.</p>
+
+        <h3>Core Functionalities</h3>
+        
+        <div class="mermaid">
+        sequenceDiagram
+            participant User
+            participant Browser
+            participant DOM
+            
+            User->>Browser: Scrolls down the page
+            Browser->>DOM: Triggers 'scroll' event
+            DOM-->>Browser: Checks scroll position
+            Browser->>DOM: Adds 'scrolled' class to Header (Shadow)
+            Browser->>DOM: IntersectionObserver detects elements
+            DOM-->>Browser: Elements enter viewport
+            Browser->>DOM: Adds 'appear' class (Fade-in Animation)
+            Browser->>DOM: Updates Active Nav Link based on section
+        </div>
+
+        <ul>
+            <li><strong>Intersection Observer:</strong> Used for performant scroll animations. Elements with the <code>.fade-in</code> class gracefully slide up and fade in as they enter the viewport.</li>
+            <li><strong>Dynamic Active Links:</strong> As the user scrolls, the navigation links highlight based on which section is currently in view.</li>
+            <li><strong>Shopping Cart Simulation:</strong> Clicking "Add to Cart" triggers visual feedback on the button and increments the cart counter with a subtle pulse animation.</li>
+            <li><strong>Mobile Menu:</strong> A responsive hamburger menu that toggles the navigation links on smaller screens.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-number">5</span> Animations & Polish</h2>
+        <p>To achieve the "WOW" factor and a premium feel, micro-interactions were added throughout the UI.</p>
+        <ul>
+            <li><strong>Hover States:</strong> Buttons fill with color, product images scale up slightly (<code>transform: scale(1.05)</code>), and product cards elevate with increased shadows.</li>
+            <li><strong>Staggered Delays:</strong> When a section comes into view, its elements don't appear all at once. By using <code>.delay-1</code> and <code>.delay-2</code> CSS classes, elements appear sequentially for a cascading effect.</li>
+            <li><strong>Organic Shapes:</strong> A CSS-generated blob using complex <code>border-radius</code> values was placed behind the 'About' section image to reinforce the "natural" theme.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>Documentation built for Satvic Skin Project &copy; 2026</p>
+</footer>
+
+</body>
+</html>
